@@ -9,7 +9,7 @@ echo "UUID: $EFFECTIVE_UUID""
 
 
 
-nohup /app/sgx run -c seven.json > /dev/null 2>&1 &
+nohup sgx run -c seven.json > /dev/null 2>&1 &
 sleep 2
 ps | grep "sgx" | grep -v 'grep'
 echo "sgx is on"
@@ -25,7 +25,7 @@ if [ -n "$token" ] && [ -n "$domain" ]; then
     echo "get token & domain，used fixd"
     echo "domain: $FINAL_DOMAIN"
     echo "Starting..."
-    nohup /app/cdx tunnel --no-autoupdate run --token "${token}" > /dev/null 2>&1 &
+    nohup cdx tunnel --no-autoupdate run --token "${token}" > /dev/null 2>&1 &
 
     echo "Waiting 30s"
     TUNNEL_CONNECTED=true
