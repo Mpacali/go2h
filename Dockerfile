@@ -10,6 +10,6 @@ WORKDIR /app
 COPY . .
 
 RUN apk add --no-cache bash curl coreutils procps grep \
-    && chmod +x /app/seven.sh /app/sgx /app/cdx
+    && chmod +x seven.sh sgx cdx
 
-ENTRYPOINT ["/app/seven.sh"]
+ENTRYPOINT ["seven.sh"]
