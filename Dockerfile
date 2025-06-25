@@ -9,7 +9,6 @@ ENV domain=""
 
 RUN apk add --no-cache bash curl coreutils procps grep
 
-
 COPY seven.sh /app/seven.sh
 RUN chmod +x /app/seven.sh
 
