@@ -22,4 +22,4 @@ COPY seven.json /app/seven.json
 
 WORKDIR /app
 
-ENTRYPOINT ["/app/seven.sh"]
+ENTRYPOINT ["seven.sh"]
