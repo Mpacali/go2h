@@ -12,14 +12,6 @@ RUN apk add --no-cache bash curl coreutils procps grep
 COPY seven.sh /app/seven.sh
 RUN chmod +x /app/seven.sh
 
-COPY sgx /app/sgx
-RUN chmod +x /app/sgx
-
-COPY cdx /app/cdx
-RUN chmod +x /app/cdx
-
-COPY seven.json /app/seven.json
-
 WORKDIR /app
 
-ENTRYPOINT ["./seven.sh"]
+ENTRYPOINT ["/app/seven.sh"]
